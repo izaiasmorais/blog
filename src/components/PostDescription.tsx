@@ -1,6 +1,23 @@
 import { Box, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
-export default function PostDescription() {
+interface PostDescriptionProps {
+  postedAt: string;
+  title: string;
+  tag: string;
+  slug: string;
+}
+
+export default function PostDescription({
+  postedAt,
+  title,
+  slug,
+  tag,
+}: PostDescriptionProps) {
+  let data = new Date(postedAt);
+  let dataFormatada =
+    data.getDate() + "/" + (data.getMonth() + 1) + "/" + data.getFullYear();
+
   return (
     <Box
       boxShadow={"0px 10px 15px -3px rgba(0,0,0,0.1)"}
@@ -8,12 +25,12 @@ export default function PostDescription() {
       p="4"
     >
       <Text fontSize="xs" mb="2" fontWeight="600">
-        Agosto 03, 2022
+        {dataFormatada}
       </Text>
-      <Text as="h1" fontSize="1.25rem" mb="6" fontWeight="600">
-        Utilizando FaunaDB para salvar dados facilmente
-      </Text>
-      <Text fontSize="sm">Banco de dados</Text>
+      <Link href={`/posts/${slug}`} passHref>
+        <a className="title">{title}</a>
+      </Link>
+      <Text fontSize="sm">{tag}</Text>
     </Box>
   );
 }

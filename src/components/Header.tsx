@@ -1,4 +1,5 @@
-import { Button, Flex, Link, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Button, Flex, Text, useBreakpointValue, Link } from "@chakra-ui/react";
+import ActiveLink from "./ActiveLink";
 
 export default function Header() {
   const isWideVersion = useBreakpointValue({
@@ -24,14 +25,22 @@ export default function Header() {
         </Text>
 
         {isWideVersion && (
-          <Flex gap={8} fontSize="lg">
-            <Link>Home</Link>
+          <Flex gap={8} fontSize="lg" color="blackAlpha.700">
+            <ActiveLink href="/" activeClassName="active">
+              <a>Home</a>
+            </ActiveLink>
 
-            <Link>Posts</Link>
+            <ActiveLink href="/posts" activeClassName="active">
+              <a>Posts</a>
+            </ActiveLink>
 
-            <Link>Sobre</Link>
+            <ActiveLink href="/about" activeClassName="active">
+              <a>Sobre</a>
+            </ActiveLink>
 
-            <Link>Contato</Link>
+            <ActiveLink href="/contact" activeClassName="active">
+              <a>Contato</a>
+            </ActiveLink>
           </Flex>
         )}
 

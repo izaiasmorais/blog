@@ -1,8 +1,9 @@
 import { Flex, Grid } from "@chakra-ui/react";
+import { PostsProps } from "../types/types";
 import PostDescription from "./PostDescription";
 import PostImage from "./PostImage";
 
-export default function Gallery() {
+export default function Gallery({ posts }: PostsProps) {
   return (
     <Grid
       w="100%"
@@ -21,20 +22,19 @@ export default function Gallery() {
         "1fr 1fr 1fr",
       ]}
     >
-      <Flex direction="column">
-        <PostImage image="/assets/image1.png" borderRadius=".5rem .5rem 0 0" />
-        <PostDescription />
-      </Flex>
-
-      <Flex direction="column">
-        <PostImage image="/assets/image2.png" borderRadius=".5rem .5rem 0 0" />
-        <PostDescription />
-      </Flex>
-
-      <Flex direction="column">
-        <PostImage image="/assets/image4.png" borderRadius=".5rem .5rem 0 0" />
-        <PostDescription />
-      </Flex>
+      {posts.map((post) => {
+        return (
+          <Flex direction="column" key={post.slug}>
+            <PostImage src={post.image.url} borderRadius=".5rem .5rem 0 0" />
+            <PostDescription
+              postedAt={post.postedAt}
+              tag={post.topic}
+              slug={post.slug}
+              title={post.title}
+            />
+          </Flex>
+        );
+      })}
     </Grid>
   );
 }

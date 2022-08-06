@@ -10,3 +10,35 @@ body::-webkit-scrollbar-thumb {
   background: #353646;
   border-radius: 5px;
 }
+
+a {
+  padding: 5px 0;
+  display: block;
+}
+
+.active {
+  font-weight: bold;
+  position: relative;
+}
+
+.title {
+  margin-bottom: 1.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  transition: 0.2s color;
+}
+
+.title:hover {
+  color: #eea229;
+}
+
+.active::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  bottom: -10px;
+  left: 0;
+  background: #eea229;
+  position: absolute;
+}

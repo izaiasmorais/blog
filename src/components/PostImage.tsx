@@ -1,14 +1,14 @@
 import { Image } from "@chakra-ui/react";
 
 interface ImageBoxProps {
-  image: string;
+  src: string;
   borderRadius: string;
 }
 
-export default function PostImage({ image, borderRadius }: ImageBoxProps) {
+export default function PostImage({ src, borderRadius }: ImageBoxProps) {
   return (
     <Image
-      src={image}
+      src={src}
       alt="image"
       height={["260px", "260px", "224px"]}
       width="100%"

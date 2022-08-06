@@ -13,11 +13,11 @@ export default function Section() {
       wrap={["wrap", "wrap", "nowrap"]}
     >
       <Flex width="100%" maxWidth={["100%", "100%", "350px"]}>
-        <ImageBox image="/assets/image3.png" borderRadius=".5rem" />
+        <ImageBox src="/assets/image3.png" borderRadius=".5rem" />
       </Flex>
 
       <Flex direction="column" gap="2">
-        <Text as="h1" fontSize="3xl" fontWeight="600" transition="all .2s">
+        <Text as="h1" fontSize="3xl" fontWeight="600">
           Receita de bolo para criar contextos no React
         </Text>
         <Text as="p" fontSize="1xl">
@@ -32,6 +32,8 @@ export default function Section() {
           display="flex"
           align="center"
           cursor="pointer"
+          _hover={{ color: "orange.500" }}
+          transition=".2s color"
         >
           Veja mais <BsArrowRightShort size={30} />
         </Text>
