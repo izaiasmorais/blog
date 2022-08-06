@@ -9,7 +9,8 @@ export default function PostImage({ image, borderRadius }: ImageBoxProps) {
   return (
     <Image
       src={image}
-      height="224px"
+      alt="image"
+      height={["260px", "260px", "224px"]}
       width="100%"
       objectFit="cover"
       borderRadius={borderRadius}

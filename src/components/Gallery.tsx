@@ -11,9 +11,17 @@ export default function Gallery() {
       maxWidth="1120px"
       padding={5}
       gap="8"
-      gridTemplateColumns={["1fr", "1fr 1fr", "1fr 1fr 1fr"]}
+      gridTemplateColumns={[
+        "1fr",
+        "1fr",
+        "1fr 1fr",
+        "1fr 1fr 1fr",
+        "1fr 1fr 1fr",
+        "1fr 1fr 1fr",
+        "1fr 1fr 1fr",
+      ]}
     >
-      <Flex direction="column" minWidth="200px">
+      <Flex direction="column">
         <PostImage image="/assets/image1.png" borderRadius=".5rem .5rem 0 0" />
         <PostDescription />
       </Flex>
