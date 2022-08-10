@@ -18,6 +18,7 @@ export default function Post({ post }: PostProps) {
         mx="auto"
         mt="3.75rem"
         direction="column"
+        p="1rem"
       >
         <Text
           as="h1"

@@ -1,4 +1,5 @@
-import { Button, Flex, Text, useBreakpointValue, Link } from "@chakra-ui/react";
+import { Button, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
+import toast from "react-hot-toast";
 import ActiveLink from "./ActiveLink";
 
 export default function Header() {
@@ -7,6 +8,10 @@ export default function Header() {
     md: true,
     lg: true,
   });
+
+  function Subscribe() {
+    toast.error("Inscrição não disponível no momento");
+  }
 
   return (
     <Flex as="header" w="100%">
@@ -37,16 +42,17 @@ export default function Header() {
             <ActiveLink href="/about" activeClassName="active">
               <a>Sobre</a>
             </ActiveLink>
-
-            <ActiveLink href="/contact" activeClassName="active">
-              <a>Contato</a>
-            </ActiveLink>
           </Flex>
         )}
 
         <Flex>
-          <Button colorScheme="orange" color="black" borderRadius=".2rem">
-            Subscribe
+          <Button
+            colorScheme="orange"
+            color="black"
+            borderRadius=".2rem"
+            onClick={() => Subscribe()}
+          >
+            Inscreva-se
           </Button>
         </Flex>
       </Flex>

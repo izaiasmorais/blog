@@ -3,6 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { theme } from "../styles/theme";
 import "../styles/globals.css";
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -11,6 +12,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <Head>
           <title>EZBlog</title>
         </Head>
+
+        <Toaster position="top-center" reverseOrder={false} />
+
         <Component {...pageProps} />
       </ChakraProvider>
     </>

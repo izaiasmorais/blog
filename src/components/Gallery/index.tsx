@@ -1,5 +1,5 @@
 import { Flex, Grid } from "@chakra-ui/react";
-import { PostsProps } from "../types/types";
+import { PostsProps } from "../../types/types";
 import PostDescription from "./PostDescription";
 import PostImage from "./PostImage";
 

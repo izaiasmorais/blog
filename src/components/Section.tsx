@@ -1,5 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
-import ImageBox from "./PostImage";
+import ImageBox from "./Gallery/PostImage";
 import { BsArrowRightShort } from "react-icons/bs";
 
 export default function Section() {
