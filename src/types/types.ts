@@ -9,3 +9,18 @@ export type PostsProps = {
     postedAt: string;
   }[];
 };
+
+export type PostProps = {
+  post: {
+    slug: string;
+    title: string;
+    image: {
+      url: string;
+    };
+    topic: string;
+    postedAt: string;
+    content: {
+      html: any;
+    };
+  };
+};

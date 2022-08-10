@@ -25,7 +25,6 @@ export const theme = extendTheme({
     global: {
       body: {
         color: colors.black["800"],
-        
       },
     },
   },

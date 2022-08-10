@@ -17,8 +17,8 @@ export default function Header() {
         display="flex"
         justify={"space-between"}
         align="center"
-        px="6"
-        py="8"
+        px="4"
+        py="4"
       >
         <Text fontSize="xl" fontWeight="600">
           EZBlog.
