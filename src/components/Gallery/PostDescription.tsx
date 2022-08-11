@@ -1,6 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
 import Link from "next/link";
-import dateFormat from "dateFormat";
 
 interface PostDescriptionProps {
   postedAt: string;
@@ -19,12 +18,10 @@ export default function PostDescription({
   let dataFormatada =
     data.getDate() + "/" + (data.getMonth() + 1) + "/" + data.getFullYear();
 
-  const DateFormated = dateFormat("2019-04-30T08:59:00.000Z", "mmmm dS, yyyy");
-
   return (
     <Box p="4">
       <Text fontSize="xs" mb="2" fontWeight="600">
-        {DateFormated}
+        {dataFormatada}
       </Text>
       <Link href={`/posts/${slug}`} passHref>
         <a className="title">{title}</a>
