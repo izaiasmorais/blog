@@ -38,6 +38,7 @@ export default function Header() {
         </Flex>
 
         <Flex display={["flex", "flex", "none"]}>
+          <ColorModeButton />
           <HeaderMenu />
         </Flex>
       </Flex>
