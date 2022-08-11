@@ -1,19 +1,14 @@
 import { gql } from "@apollo/client";
 import { Flex } from "@chakra-ui/react";
-import type { GetStaticProps, NextPage } from "next";
-import { useRouter } from "next/router";
+import { client } from "../lib";
+import { PostsProps } from "../types/types";
 import { Footer } from "../components/Footer";
+import type { GetStaticProps } from "next";
 import Gallery from "../components/Gallery";
 import Header from "../components/Header";
 import Section from "../components/Section";
-import { client } from "../lib";
-import { PostsProps } from "../types/types";
 
 export default function Home({ posts }: PostsProps) {
-  const { asPath } = useRouter();
-
-  console.log(asPath);
-
   return (
     <Flex direction="column" h="100vh">
       <Header />
