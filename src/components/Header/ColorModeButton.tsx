@@ -1,7 +1,7 @@
 import { Button, Flex, useColorMode } from "@chakra-ui/react";
 import { MdOutlineLightMode, MdOutlineNightlight } from "react-icons/md";
 
-export default function ColorModeButton() {
+export function ColorModeButton() {
   const { colorMode, setColorMode } = useColorMode();
 
   return (

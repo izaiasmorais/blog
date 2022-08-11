@@ -1,7 +1,7 @@
 import { Button, Flex } from "@chakra-ui/react";
 import toast from "react-hot-toast";
 
-export default function SubscribeButton() {
+export function SubscribeButton() {
   function Subscribe() {
     toast.error("Inscrição não disponível no momento");
   }

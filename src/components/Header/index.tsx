@@ -1,9 +1,9 @@
 import { Flex, Text, useBreakpointValue } from "@chakra-ui/react";
-import ColorModeButton from "./ColorModeButton";
-import NavBar from "./NavBar";
-import SubscribeButton from "./SubscribeButton";
-import HeaderMenu from "./HeaderMenu";
-import Logo from "./Logo";
+import { ColorModeButton } from "./ColorModeButton";
+import { NavBar } from "./NavBar";
+import { SubscribeButton } from "./SubscribeButton";
+import { HeaderMenu } from "./HeaderMenu";
+import { Logo } from "./Logo";
 
 export default function Header() {
   const isWildVersion = useBreakpointValue({
@@ -25,10 +25,20 @@ export default function Header() {
         py="5"
       >
         <Logo />
-        <NavBar />
-        <Flex gap="1rem">
-          <ColorModeButton />
-          <SubscribeButton />
+
+        <Flex display={["none", "none", "flex"]}>
+          <NavBar />
+        </Flex>
+
+        <Flex display={["none", "none", "flex"]}>
+          <Flex gap="1rem">
+            <ColorModeButton />
+            <SubscribeButton />
+          </Flex>
+        </Flex>
+
+        <Flex display={["flex", "flex", "none"]}>
+          <HeaderMenu />
         </Flex>
       </Flex>
     </Flex>

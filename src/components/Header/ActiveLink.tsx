@@ -8,7 +8,7 @@ interface ActiveLinkProps extends LinkProps {
   activeClassName: string;
 }
 
-export default function ActiveLink({
+export function ActiveLink({
   children,
   shouldMatch = false,
   activeClassName,

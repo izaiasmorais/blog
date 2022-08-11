@@ -1,10 +1,16 @@
-import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
+import {
+  Button,
+  Flex,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+} from "@chakra-ui/react";
 import { CgMenuRight } from "react-icons/cg";
-import ActiveLink from "./ActiveLink";
-import NavBar from "./NavBar";
-import SubscribeButton from "./SubscribeButton";
+import { ActiveLink } from "./ActiveLink";
+import { SubscribeButton } from "./SubscribeButton";
 
-export default function HeaderMenu() {
+export function HeaderMenu() {
   return (
     <Menu>
       <MenuButton
@@ -36,9 +42,9 @@ export default function HeaderMenu() {
           </ActiveLink>
         </MenuItem>
 
-        <MenuItem>
+        <Flex p="2">
           <SubscribeButton />
-        </MenuItem>
+        </Flex>
       </MenuList>
     </Menu>
   );
