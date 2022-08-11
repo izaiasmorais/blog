@@ -24,7 +24,18 @@ export default function PostDescription({
         {dataFormatada}
       </Text>
       <Link href={`/posts/${slug}`} passHref>
-        <a className="title">{title}</a>
+        <Text
+          as="a"
+          fontWeight="600"
+          fontSize="1.25rem"
+          h="4.375rem"
+          display="block"
+          mb="1.25rem"
+          transition="0.2s color"
+          _hover={{ color: "orange.500" }}
+        >
+          {title}
+        </Text>
       </Link>
       <Text fontSize="sm">{tag}</Text>
     </Box>

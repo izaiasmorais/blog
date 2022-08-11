@@ -15,18 +15,18 @@ export function Footer() {
         mt="4rem"
         py="2rem"
       >
-        <Text as="span" fontSize="1rem" mb="1rem">
+        <Text as="span" fontSize="sm" mb="1rem">
           2022 © EZBlog • Todos os direitos reservados
         </Text>
         <Flex gap="1rem" align="center">
           <Link href="https://github.com/IzaiasMorais">
-            <AiFillGithub size={30} />
+            <AiFillGithub size={28} />
           </Link>
           <Link href="https://www.instagram.com/_izaias_morais/">
             <AiFillInstagram size={30} />
           </Link>
-          <Link href="https://discord.com/users/734056109605650534">
-            <BsDiscord size={26} />
+          <Link mt="1" href="https://discord.com/users/734056109605650534">
+            <BsDiscord size={27} />
           </Link>
         </Flex>
       </Flex>

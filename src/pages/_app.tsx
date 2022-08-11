@@ -4,6 +4,7 @@ import { theme } from "../styles/theme";
 import "../styles/globals.css";
 import Head from "next/head";
 import { Toaster } from "react-hot-toast";
+import NextNProgress from "nextjs-progressbar";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -15,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
         <Toaster position="top-center" reverseOrder={false} />
 
+        <NextNProgress color="#eea229" />
         <Component {...pageProps} />
       </ChakraProvider>
     </>
