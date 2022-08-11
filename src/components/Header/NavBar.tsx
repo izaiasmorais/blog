@@ -1,5 +1,5 @@
 import { Flex } from "@chakra-ui/react";
-import ActiveLink from "../ActiveLink";
+import ActiveLink from "./ActiveLink";
 
 export default function NavBar() {
   return (

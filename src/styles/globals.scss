@@ -39,3 +39,15 @@ code {
   color: #eea229;
   width: 100%;
 }
+
+.dropdown-menu {
+  display: flex;
+  gap: 1rem;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    display: flex;
+  }
+}

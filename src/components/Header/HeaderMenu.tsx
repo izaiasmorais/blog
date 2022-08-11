@@ -1,6 +1,6 @@
 import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { CgMenuRight } from "react-icons/cg";
-import ActiveLink from "../ActiveLink";
+import ActiveLink from "./ActiveLink";
 import NavBar from "./NavBar";
 import SubscribeButton from "./SubscribeButton";
 

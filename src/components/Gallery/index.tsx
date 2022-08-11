@@ -31,17 +31,16 @@ export default function Gallery({ posts }: PostsProps) {
     >
       {posts.map((post) => {
         return (
-          <SlideFade offsetY="50px" in={isOpen}>
+          <SlideFade offsetY="50px" in={isOpen} key={post.slug}>
             <Flex
               direction="column"
-              key={post.slug}
+              boxShadow={"0px 10px 15px -3px rgba(0,0,0,0.1)"}
+              borderRadius={"0 0 .5rem .5rem"}
+              transition="all .3s"
               _hover={{
                 transform: "translate3d(0, -5px, 0)",
                 boxShadow: "0px 15px 20px -3px #00000020",
               }}
-              boxShadow={"0px 10px 15px -3px rgba(0,0,0,0.1)"}
-              borderRadius={"0 0 .5rem .5rem"}
-              transition="all .3s"
             >
               <PostImage src={post.image.url} borderRadius=".5rem .5rem 0 0" />
               <PostDescription
