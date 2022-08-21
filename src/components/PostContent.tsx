@@ -23,8 +23,6 @@ export function PostContent() {
 
   const content = postData.body;
 
-  console.log(content);
-
   useEffect(() => {
     getPostDetails();
   }, []);
