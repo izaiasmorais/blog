@@ -1,56 +1,17 @@
-import { gql } from "@apollo/client";
-import { Flex, SlideFade, Text, useDisclosure } from "@chakra-ui/react";
-import { GetStaticProps } from "next";
-import { useEffect } from "react";
-import { Footer } from "../../components/Footer";
-import Header from "../../components/Header";
-import { client } from "../../lib";
+import { Flex } from "@chakra-ui/react";
 import { PostProps, PostsProps } from "../../types/types";
-import styles from "./styles.module.scss";
+import { GetStaticProps } from "next";
+import { client } from "../../lib";
+import { gql } from "@apollo/client";
+import { PostContent } from "../../components/PostContent";
+import Header from "../../components/Header";
 
 export default function Post({ post }: PostProps) {
-  const { isOpen, onOpen } = useDisclosure();
-
-  useEffect(() => {
-    onOpen();
-  }, []);
-
   return (
     <Flex direction="column" h="100vh">
       <Header />
 
-      <SlideFade offsetY="60px" in={isOpen}>
-        <Flex
-          as="article"
-          w="100%"
-          maxWidth="720px"
-          mx="auto"
-          mt="3.75rem"
-          direction="column"
-          p="1rem"
-        >
-          <Text
-            as="h1"
-            fontSize="2.625rem"
-            textAlign="left"
-            fontWeight="700"
-            mb="1rem"
-          >
-            {post.title}
-          </Text>
-
-          <Text as="span" mb="2rem">
-            {post.postedAt} • 5 min de leitura
-          </Text>
-
-          <div
-            className={styles.Post}
-            dangerouslySetInnerHTML={{ __html: post.content.html }}
-          />
-        </Flex>
-      </SlideFade>
-
-      <Footer />
+      <PostContent content={post.content.markdown} />
     </Flex>
   );
 }
@@ -93,7 +54,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
           url
         }
         content {
-          html
+          markdown
         }
       }
     }

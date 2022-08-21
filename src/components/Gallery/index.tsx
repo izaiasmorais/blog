@@ -4,7 +4,7 @@ import { PostsProps } from "../../types/types";
 import PostDescription from "./PostDescription";
 import PostImage from "./PostImage";
 
-export default function Gallery({ posts }: PostsProps) {
+export function Gallery({ posts }: PostsProps) {
   const { isOpen, onOpen } = useDisclosure();
 
   useEffect(() => {
@@ -14,6 +14,7 @@ export default function Gallery({ posts }: PostsProps) {
   return (
     <Grid
       w="100%"
+      h="100%"
       mx="auto"
       marginTop="8"
       maxWidth="1120px"

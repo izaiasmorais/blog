@@ -2,7 +2,7 @@ import { gql } from "@apollo/client";
 import { Flex } from "@chakra-ui/react";
 import { GetStaticProps } from "next";
 import { Footer } from "../../components/Footer";
-import Gallery from "../../components/Gallery";
+import { Gallery } from "../../components/Gallery";
 import Header from "../../components/Header";
 import { client } from "../../lib";
 import { PostsProps } from "../../types/types";

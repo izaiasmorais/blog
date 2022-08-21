@@ -9,7 +9,7 @@ import NextNProgress from "nextjs-progressbar";
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-      <ChakraProvider theme={theme}>
+      <ChakraProvider theme={theme} resetCSS={false}>
         <Head>
           <title>EZBlog</title>
         </Head>

@@ -1,4 +1,5 @@
 import { Box, Text } from "@chakra-ui/react";
+import moment from "moment";
 import Link from "next/link";
 
 interface PostDescriptionProps {
@@ -14,14 +15,16 @@ export default function PostDescription({
   slug,
   tag,
 }: PostDescriptionProps) {
-  let data = new Date(postedAt);
-  let dataFormatada =
-    data.getDate() + "/" + (data.getMonth() + 1) + "/" + data.getFullYear();
+  function relativeDateFormatter(date: string) {
+    return moment(date).fromNow();
+  }
+  
+  let formattedDate = relativeDateFormatter(postedAt);
 
   return (
     <Box p="4">
       <Text fontSize="xs" mb="2" fontWeight="600">
-        {dataFormatada}
+        {formattedDate}
       </Text>
       <Link href={`/posts/${slug}`} passHref>
         <Text

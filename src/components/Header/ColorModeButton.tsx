@@ -12,7 +12,7 @@ export function ColorModeButton() {
           _hover={{ bg: "blue.500" }}
           onClick={() => setColorMode("dark")}
         >
-          <MdOutlineNightlight size={20} />
+          <MdOutlineNightlight size={20} color="white" />
         </Button>
       ) : (
         <Button
@@ -20,7 +20,7 @@ export function ColorModeButton() {
           _hover={{ bg: "blue.500" }}
           onClick={() => setColorMode("light")}
         >
-          <MdOutlineLightMode size={20} />
+          <MdOutlineLightMode size={20} color="white" />
         </Button>
       )}
     </Flex>

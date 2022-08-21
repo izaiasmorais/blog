@@ -4,7 +4,7 @@ import { client } from "../lib";
 import { PostsProps } from "../types/types";
 import { Footer } from "../components/Footer";
 import type { GetStaticProps } from "next";
-import Gallery from "../components/Gallery";
+import { Gallery } from "../components/Gallery";
 import Header from "../components/Header";
 import Section from "../components/Section";
 
