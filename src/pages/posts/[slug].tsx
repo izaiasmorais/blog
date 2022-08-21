@@ -11,7 +11,7 @@ export default function Post({ post }: PostProps) {
     <Flex direction="column" h="100vh">
       <Header />
 
-      <PostContent content={post.content.markdown} />
+      <PostContent />
     </Flex>
   );
 }

@@ -20,7 +20,7 @@ export type PostProps = {
     topic: string;
     postedAt: string;
     content: {
-      markdown: string;
+      markdown: any;
     };
   };
 };
