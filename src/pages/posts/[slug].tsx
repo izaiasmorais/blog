@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
 import { PostProps, PostsProps } from "../../types/types";
 import { GetStaticProps } from "next";
 import { client } from "../../lib";
@@ -11,7 +11,23 @@ export default function Post({ post }: PostProps) {
     <Flex direction="column" h="100vh">
       <Header />
 
-      <PostContent />
+      <Flex direction="column" mx="auto" mt="5rem" maxWidth="800px">
+        <Text
+          as="h1"
+          fontSize="2.625rem"
+          textAlign="left"
+          fontWeight="700"
+          mb="1rem"
+        >
+          {post.title}
+        </Text>
+
+        <Text as="span" mb="2rem">
+          {post.postedAt} • 5 min de leitura
+        </Text>
+
+        <PostContent />
+      </Flex>
     </Flex>
   );
 }
