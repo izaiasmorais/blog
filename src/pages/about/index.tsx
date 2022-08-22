@@ -11,7 +11,7 @@ export default function About() {
           <Text as="h1" fontSize="3xl" mb="4">
             About
           </Text>
-          <Text as="p">
+          <Text as="p" fontSize="1.125rem">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
             dolorem vel earum, eaque repellat consectetur consequatur libero
             magnam sunt modi expedita quam voluptate nobis fuga possimus

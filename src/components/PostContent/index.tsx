@@ -1,28 +1,16 @@
-import { api } from "../lib/axios";
-import { useEffect, useState } from "react";
 import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+
 import ReactMarkdown from "react-markdown";
 import styles from "./post.module.scss";
+import { SlideFade, useDisclosure } from "@chakra-ui/react";
+import { useEffect } from "react";
 
-const username = "izaiasmorais";
-const repoName = "blog-posts";
+interface PostConentProps {
+  content: string;
+}
 
-export function PostContent() {
-  const [postData, setPostData] = useState({} as any);
-
-  async function getPostDetails() {
-    const response = await api.get(`/repos/${username}/${repoName}/issues/1`);
-
-    setPostData(response.data);
-  }
-
-  const content = postData.body;
-
-  useEffect(() => {
-    getPostDetails();
-  }, []);
-
+export function PostContent({ content }: PostConentProps) {
   return (
     <ReactMarkdown
       children={content}

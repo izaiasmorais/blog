@@ -1,7 +1,8 @@
 import { Flex, Grid, SlideFade, useDisclosure } from "@chakra-ui/react";
 import { useEffect } from "react";
+import { Post } from "../../types/types";
+
 import slugify from "slugify";
-import { Post } from "../../pages/posts";
 import PostDescription from "./PostDescription";
 
 interface PostsProps {
@@ -51,7 +52,7 @@ export function Gallery({ posts }: PostsProps) {
                 tag="ReactJS"
                 title={post.title}
                 key={post.title}
-                slug={slugify(post.title).toLowerCase()}
+                slug={String(post.number)}
                 postedAt={post.created_at}
               />
             </Flex>

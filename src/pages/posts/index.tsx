@@ -6,10 +6,9 @@ import { api } from "../../lib/axios";
 import { Post } from "../../types/types";
 import Header from "../../components/Header";
 
-const username = "izaiasmorais";
-const repoName = "blog-posts";
-
 export default function Posts() {
+  const username = "izaiasmorais";
+  const repoName = "blog-posts";
   const [posts, setPosts] = useState<Post[]>([]);
 
   const getPosts = useCallback(
