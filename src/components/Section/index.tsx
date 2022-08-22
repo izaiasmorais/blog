@@ -27,7 +27,7 @@ export default function Section() {
           começamos a trabalhar com aplicações mais complexas...
         </Text>
         <Link
-          href="http://localhost:3000/posts/receita-de-bolo-para-criar-contextos-no-react"
+          href="https://ezblog.vercel.app/posts/receita-de-bolo-para-criar-contextos-no-react"
           passHref
         >
           <Text
