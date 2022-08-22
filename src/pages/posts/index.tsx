@@ -1,34 +1,17 @@
+import { gql } from "@apollo/client";
 import { Flex } from "@chakra-ui/react";
-import { useCallback, useEffect, useState } from "react";
+import { GetStaticProps } from "next";
 import { Footer } from "../../components/Footer";
 import { Gallery } from "../../components/Gallery";
-import { api } from "../../lib/axios";
+import { client } from "../../lib/apollo";
 import { Post } from "../../types/types";
-import Header from "../../components/Header";
+import { Header } from "../../components/Header";
 
-export default function Posts() {
-  const username = "izaiasmorais";
-  const repoName = "blog-posts";
-  const [posts, setPosts] = useState<Post[]>([]);
+interface PostsProps {
+  posts: Post[];
+}
 
-  const getPosts = useCallback(
-    async (query: string = "") => {
-      try {
-        const response = await api.get(
-          `/search/issues?q=${query}%20repo:${username}/${repoName}`
-        );
-
-        setPosts(response.data.items);
-      } finally {
-      }
-    },
-    [posts]
-  );
-
-  useEffect(() => {
-    getPosts();
-  }, []);
-
+export default function Posts({ posts }: PostsProps) {
   return (
     <Flex direction="column" h="100vh">
       <Header />
@@ -37,3 +20,29 @@ export default function Posts() {
     </Flex>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await client.query<PostsProps>({
+    query: gql`
+      query MyQuery {
+        posts(orderBy: id_DESC) {
+          slug
+          title
+          image {
+            url
+          }
+          topic
+          postedAt
+        }
+      }
+    `,
+  });
+
+  const posts = data.posts;
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};

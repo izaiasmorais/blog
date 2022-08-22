@@ -1,6 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 import ImageBox from "../Gallery/PostImage";
 import { BsArrowRightShort } from "react-icons/bs";
+import Link from "next/link";
 
 export default function Section() {
   return (
@@ -25,18 +26,23 @@ export default function Section() {
           (pai para filho), no entanto, isso pode se tornar complicado quando
           começamos a trabalhar com aplicações mais complexas...
         </Text>
-        <Text
-          as="a"
-          fontSize="1xl"
-          fontWeight="bold"
-          display="flex"
-          align="center"
-          cursor="pointer"
-          _hover={{ color: "orange.500" }}
-          transition=".2s color"
+        <Link
+          href="http://localhost:3000/posts/receita-de-bolo-para-criar-contextos-no-react"
+          passHref
         >
-          Veja mais <BsArrowRightShort size={30} />
-        </Text>
+          <Text
+            as="a"
+            fontSize="1xl"
+            fontWeight="bold"
+            display="flex"
+            align="center"
+            cursor="pointer"
+            _hover={{ color: "orange.500" }}
+            transition=".2s color"
+          >
+            Veja mais <BsArrowRightShort size={30} />
+          </Text>
+        </Link>
       </Flex>
     </Flex>
   );

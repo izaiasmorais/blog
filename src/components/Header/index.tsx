@@ -5,7 +5,7 @@ import { SubscribeButton } from "./SubscribeButton";
 import { HeaderMenu } from "./HeaderMenu";
 import { Logo } from "./Logo";
 
-export default function Header() {
+export function Header() {
   const isWildVersion = useBreakpointValue({
     base: false,
     md: true,

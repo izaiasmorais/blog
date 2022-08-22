@@ -1,4 +1,4 @@
-export interface Post {
+export interface GitPost {
   title: string;
   body: string;
   created_at: string;
@@ -10,17 +10,13 @@ export interface Post {
   };
 }
 
-export type PostProps = {
-  post: {
-    slug: string;
-    title: string;
-    image: {
-      url: string;
-    };
-    topic: string;
-    postedAt: string;
-    content: {
-      markdown: any;
-    };
+export type Post = {
+  slug: string;
+  title: string;
+  image: {
+    url: string;
   };
+  topic: string;
+  postedAt: string;
+  contentText: string;
 };

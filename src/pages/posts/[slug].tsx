@@ -1,35 +1,30 @@
+import { gql } from "@apollo/client";
 import { Flex, SlideFade, Text, useDisclosure } from "@chakra-ui/react";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { GetStaticProps } from "next";
+import { useEffect } from "react";
 import { Footer } from "../../components/Footer";
-import Header from "../../components/Header";
 import { PostContent } from "../../components/PostContent";
-import { api } from "../../lib/axios";
+import { client } from "../../lib/apollo";
+import { Post } from "../../types/types";
+import { relativeDateFormatter } from "../../utils/formatDate";
+import { Header } from "../../components/Header";
 
-const username = "izaiasmorais";
-const repoName = "blog-posts";
+interface PostsProps {
+  posts: Post[];
+}
 
-export default function Post() {
+interface PostProps {
+  post: Post;
+}
+
+export default function PostPage({ post }: PostProps) {
   const { isOpen, onOpen } = useDisclosure();
-
-  const { asPath } = useRouter();
-
-  const id = asPath.replace("/posts/", "");
-
-  const [postData, setPostData] = useState({} as any);
-
-  async function getPostDetails() {
-    const response = await api.get(
-      `/repos/${username}/${repoName}/issues/${id}`
-    );
-
-    setPostData(response.data);
-  }
 
   useEffect(() => {
     onOpen();
-    getPostDetails();
   }, []);
+
+  let formattedDate = relativeDateFormatter(post.postedAt);
 
   return (
     <Flex direction="column" h="100vh">
@@ -44,18 +39,73 @@ export default function Post() {
             fontWeight="700"
             mb="1rem"
           >
-            {postData.title}
+            {post.title}
           </Text>
 
           <Text as="span" mb="2rem">
-            4 dias atrás • 5 min de leitura
+            {formattedDate} • 5 min de leitura
           </Text>
 
-          <PostContent content={postData.body} />
-
-          <Footer />
+          <PostContent content={post.contentText} />
         </Flex>
+        <Footer />
       </SlideFade>
     </Flex>
   );
 }
+
+export const getStaticPaths = async () => {
+  const { data } = await client.query<PostsProps>({
+    query: gql`
+      query MyQuery {
+        posts(orderBy: publishedAt_DESC) {
+          slug
+        }
+      }
+    `,
+  });
+
+  const posts = data.posts;
+
+  const paths = posts.map((post) => ({
+    params: {
+      slug: post.slug,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { slug } = params!;
+
+  const GET_POSTS_BY_QUERY = gql`
+    query GetPostBySlug($slug: String) {
+      post(where: { slug: $slug }) {
+        slug
+        title
+        postedAt
+        image {
+          url
+        }
+        contentText
+      }
+    }
+  `;
+
+  const { data } = await client.query<PostProps>({
+    query: GET_POSTS_BY_QUERY,
+    variables: {
+      slug: slug,
+    },
+  });
+
+  return {
+    props: {
+      post: data.post,
+    },
+  };
+};
