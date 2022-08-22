@@ -1,8 +1,12 @@
 import { Flex, Grid, SlideFade, useDisclosure } from "@chakra-ui/react";
 import { useEffect } from "react";
-import { PostsProps } from "../../types/types";
+import slugify from "slugify";
+import { Post } from "../../pages/posts";
 import PostDescription from "./PostDescription";
-import PostImage from "./PostImage";
+
+interface PostsProps {
+  posts: Post[];
+}
 
 export function Gallery({ posts }: PostsProps) {
   const { isOpen, onOpen } = useDisclosure();
@@ -32,7 +36,7 @@ export function Gallery({ posts }: PostsProps) {
     >
       {posts.map((post) => {
         return (
-          <SlideFade offsetY="50px" in={isOpen} key={post.slug}>
+          <SlideFade offsetY="50px" in={isOpen} key={post.number}>
             <Flex
               direction="column"
               boxShadow={"0px 10px 15px -3px rgba(0,0,0,0.1)"}
@@ -43,12 +47,12 @@ export function Gallery({ posts }: PostsProps) {
                 boxShadow: "0px 15px 20px -3px #00000020",
               }}
             >
-              <PostImage src={post.image.url} borderRadius=".5rem .5rem 0 0" />
               <PostDescription
-                postedAt={post.postedAt}
-                tag={post.topic}
-                slug={post.slug}
+                tag="ReactJS"
                 title={post.title}
+                key={post.title}
+                slug={slugify(post.title).toLowerCase()}
+                postedAt={post.created_at}
               />
             </Flex>
           </SlideFade>

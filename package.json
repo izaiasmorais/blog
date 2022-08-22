@@ -27,7 +27,8 @@
     "react-markdown": "^8.0.3",
     "react-syntax-highlighter": "^15.5.0",
     "remark-gfm": "^3.0.1",
-    "sass": "^1.54.3"
+    "sass": "^1.54.3",
+    "slugify": "^1.6.5"
   },
   "devDependencies": {
     "@types/dateformat": "^5.0.0",

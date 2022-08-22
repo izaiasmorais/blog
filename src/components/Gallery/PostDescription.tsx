@@ -1,6 +1,7 @@
 import { Box, Text } from "@chakra-ui/react";
-import moment from "moment";
+
 import Link from "next/link";
+import { relativeDateFormatter } from "../../utils/formatDate";
 
 interface PostDescriptionProps {
   postedAt: string;
@@ -15,10 +16,6 @@ export default function PostDescription({
   slug,
   tag,
 }: PostDescriptionProps) {
-  function relativeDateFormatter(date: string) {
-    return moment(date).fromNow();
-  }
-  
   let formattedDate = relativeDateFormatter(postedAt);
 
   return (

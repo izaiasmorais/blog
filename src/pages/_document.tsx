@@ -14,11 +14,6 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <link
-            rel="shortcut icon"
-            href="/assets/icon.png"
-            type="image/x-icon"
-          />
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         </Head>

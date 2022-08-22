@@ -8,7 +8,7 @@ interface ActiveLinkProps extends LinkProps {
   activeClassName: string;
 }
 
-export function ActiveLink({
+export function ActiveNavbarLink({
   children,
   shouldMatch = false,
   activeClassName,
@@ -34,7 +34,7 @@ export function ActiveLink({
   return (
     <Link {...rest}>
       {cloneElement(children, {
-        color: isActive ? activeClassName : "",
+        className: isActive ? activeClassName : "",
       })}
     </Link>
   );

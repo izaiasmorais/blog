@@ -1,6 +1,7 @@
 import {
   Button,
   Flex,
+  Link,
   Menu,
   MenuButton,
   MenuItem,
@@ -20,32 +21,31 @@ export function HeaderMenu() {
         _hover={{ bg: "transparent" }}
         _active={{ bg: "transparent" }}
       >
-        <CgMenuRight size={30} />
+        <CgMenuRight size={30} color="white" />
       </MenuButton>
 
-      <MenuList
-        bg="blue.700"
-        border="none"
-        px="2"
-        py="4"
-        min-width="50px !important"
-        width="150px"
-      >
-        <MenuItem _focus={{ bg: "transparent" }} mb="1">
-          <ActiveLink href="/" activeClassName="activeMenu">
-            <a>Home</a>
+      <MenuList bg="blue.700" border="none" px="2" py="4">
+        <MenuItem _focus={{ bg: "transparent" }} bg="transparent" mb="1">
+          <ActiveLink href="/" activeClassName="#eea229">
+            <Link w="100%" textDecoration="none" fontSize="1rem">
+              Home
+            </Link>
           </ActiveLink>
         </MenuItem>
 
-        <MenuItem mb="1">
-          <ActiveLink href="/posts" activeClassName="activeMenu">
-            <a>Posts</a>
+        <MenuItem mb="1" bg="transparent">
+          <ActiveLink href="/posts" activeClassName="#eea229">
+            <Link w="100%" textDecoration="none" fontSize="1rem">
+              Posts
+            </Link>
           </ActiveLink>
         </MenuItem>
 
-        <MenuItem mb="1">
-          <ActiveLink href="/about" activeClassName="activeMenu">
-            <a>Sobre</a>
+        <MenuItem mb="1" bg="transparent">
+          <ActiveLink href="/about" activeClassName="#eea229">
+            <Link w="100%" textDecoration="none" fontSize="1rem">
+              Sobre
+            </Link>
           </ActiveLink>
         </MenuItem>
 

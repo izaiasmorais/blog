@@ -1,20 +1,20 @@
 import { Flex } from "@chakra-ui/react";
-import { ActiveLink } from "./ActiveLink";
+import { ActiveNavbarLink } from "./ActiveNavbarLink";
 
 export function NavBar() {
   return (
     <Flex gap={8} fontSize="lg" h="100%" justify="center" align="center">
-      <ActiveLink href="/" activeClassName="active">
+      <ActiveNavbarLink href="/" activeClassName="active">
         <a>Home</a>
-      </ActiveLink>
+      </ActiveNavbarLink>
 
-      <ActiveLink href="/posts" activeClassName="active">
+      <ActiveNavbarLink href="/posts" activeClassName="active">
         <a>Posts</a>
-      </ActiveLink>
+      </ActiveNavbarLink>
 
-      <ActiveLink href="/about" activeClassName="active">
+      <ActiveNavbarLink href="/about" activeClassName="active">
         <a>Sobre</a>
-      </ActiveLink>
+      </ActiveNavbarLink>
     </Flex>
   );
 }

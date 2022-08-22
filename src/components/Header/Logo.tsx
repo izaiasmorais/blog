@@ -1,12 +1,15 @@
 import { Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 export function Logo() {
   return (
-    <Text fontSize="xl" fontWeight="600">
-      <Text as="span" color="orange.500">
-        EZ
+    <Link href="/">
+      <Text fontSize="xl" fontWeight="600" cursor="pointer">
+        <Text as="span" color="orange.500">
+          EZ
+        </Text>
+        Blog.
       </Text>
-      Blog.
-    </Text>
+    </Link>
   );
 }

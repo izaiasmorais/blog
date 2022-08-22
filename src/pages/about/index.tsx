@@ -2,12 +2,11 @@ import { Flex, Text } from "@chakra-ui/react";
 import { Footer } from "../../components/Footer";
 import Header from "../../components/Header";
 
-
 export default function About() {
   return (
     <Flex direction="column" h="100vh">
       <Header />
-      <Flex h="100%">
+      <Flex h="100%" mb="4rem">
         <Flex w="100%" maxW="1120px" mx="auto" p="5" direction="column">
           <Text as="h1" fontSize="3xl" mb="4">
             About
