@@ -18,7 +18,6 @@ export function Gallery({ posts }: PostsProps) {
   return (
     <Grid
       w="100%"
-      h="100%"
       mx="auto"
       marginTop="8"
       maxWidth="1120px"

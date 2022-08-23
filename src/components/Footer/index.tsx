@@ -4,7 +4,7 @@ import { BsDiscord } from "react-icons/bs";
 
 export function Footer() {
   return (
-    <Flex w="100%">
+    <Flex w="100%" mt="4rem">
       <Flex
         w="100%"
         maxWidth="1120px"
@@ -12,7 +12,6 @@ export function Footer() {
         direction="column"
         align="center"
         justify="center"
-        mt="4rem"
         py="2rem"
       >
         <Text as="span" fontSize="sm" mb="1rem">
