@@ -52,7 +52,7 @@ export function Gallery({ posts }: PostsProps) {
                 borderRadius=".5rem .5rem 0 0"
               />
               <PostDescription
-                tag="ReactJS"
+                tag={post.topic}
                 title={post.title}
                 key={post.title}
                 slug={post.slug}

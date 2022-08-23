@@ -1,7 +1,6 @@
-import { Box, Text } from "@chakra-ui/react";
-
-import Link from "next/link";
 import { relativeDateFormatter } from "../../utils/formatDate";
+import { Box, Text } from "@chakra-ui/react";
+import Link from "next/link";
 
 interface PostDescriptionProps {
   postedAt: string;

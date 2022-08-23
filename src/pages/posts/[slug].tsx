@@ -31,7 +31,7 @@ export default function PostPage({ post }: PostProps) {
       <Header />
 
       <SlideFade offsetY="50px" in={isOpen}>
-        <Flex direction="column" p="1rem" mx="auto" my="5rem" maxW="800px">
+        <Flex direction="column" p="1rem" mx="auto" mt={["0", "2rem", "5rem"]} mb="5rem" maxW="800px">
           <Text
             as="h1"
             fontSize="2.625rem"
