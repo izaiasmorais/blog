@@ -6,7 +6,7 @@
 
 ## 📃 Sobre o projeto
 
-Feito em Next.js e CharkaUI, o blog é totalmente responsivo e altamente performático. Criei o blog inicialmente para treinar um pouco construir interfaces com ChakaUI, e logo decidi mantê-lo documentando meus aprendizados na programação, como uso de bibliotecas e resolução de problemas que vou encontrado ao longo dos tempos. 
+Feito em Next.js e CharkaUI, o blog é responsivo e altamente performático. Inicialmente, eu o criei para treinar um pouco construir interfaces com ChakaUI, e logo decidi mantê-lo documentando meus aprendizados na programação, como uso de bibliotecas e resolução de problemas que vou encontrado ao longo dos tempos. 
 
 Na parte de fetch de dados, utilizdo o GraphCMS, pois já sou muito familiarizado com ele. Para renderizar o conteúdo dos posts, que é escrito em markdown, eu utilizdo o react-markdown e o react-syntax-highlighter.
 
