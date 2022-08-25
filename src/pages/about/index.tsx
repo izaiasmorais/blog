@@ -1,4 +1,4 @@
-import { Breadcrumb, Flex, Link, Text } from "@chakra-ui/react";
+import { Flex, Link, Text } from "@chakra-ui/react";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 
@@ -12,9 +12,9 @@ export default function About() {
             Sobre o Blog
           </Text>
           <Text as="p" fontSize="1.125rem">
-            Feito em Next.js e CharkaUI, o blog é totalmente responsivo e
-            altamente performático. Inicialmente, eu criei el para treinar o
-            desenvolvimento de interfaces com ChakaUI, e logo decidi mantê-lo
+            Feito em Next.js e CharkaUI, o blog é responsivo e altamente
+            performático. Inicialmente, eu o criei para treinar o
+            desenvolvimento de interfaces com ChakraUI, e logo decidi mantê-lo
             como blog pessoal, onde eu documento meus aprendizados na
             programação, com dicas de bibliotecas muito úteis e resolução de
             problemas que vou encontrado ao longo dos tempos. Hoje o maior foco

@@ -1,15 +1,15 @@
 import type { AppProps } from "next/app";
 
 import { ChakraProvider } from "@chakra-ui/react";
+import { ApolloProvider } from "@apollo/client";
 import { theme } from "../styles/theme";
 import { Toaster } from "react-hot-toast";
+import { client } from "../lib/apollo";
 
 import NextNProgress from "nextjs-progressbar";
 import Head from "next/head";
 
 import "../styles/globals.scss";
-import { ApolloProvider } from "@apollo/client";
-import { client } from "../lib/apollo";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

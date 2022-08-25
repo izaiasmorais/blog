@@ -3,8 +3,6 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 
 import ReactMarkdown from "react-markdown";
 import styles from "./post.module.scss";
-import { SlideFade, useDisclosure } from "@chakra-ui/react";
-import { useEffect } from "react";
 
 interface PostConentProps {
   content: string;
