@@ -19,4 +19,5 @@ export type Post = {
   topic: string;
   postedAt: string;
   contentText: string;
+  available: boolean;
 };

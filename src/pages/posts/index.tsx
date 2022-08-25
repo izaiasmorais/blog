@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const { data } = await client.query<PostsProps>({
     query: gql`
       query MyQuery {
-        posts(orderBy: id_DESC) {
+        posts(orderBy: postedAt_DESC) {
           slug
           title
           image {
@@ -33,6 +33,7 @@ export const getStaticProps: GetStaticProps = async () => {
           }
           topic
           postedAt
+          available
         }
       }
     `,

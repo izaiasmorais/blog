@@ -35,6 +35,7 @@ export const getStaticProps: GetStaticProps = async () => {
           }
           topic
           postedAt
+          available
         }
       }
     `,

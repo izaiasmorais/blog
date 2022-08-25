@@ -52,6 +52,7 @@ export function Gallery({ posts }: PostsProps) {
                 borderRadius=".5rem .5rem 0 0"
               />
               <PostDescription
+                available={post.available}
                 tag={post.topic}
                 title={post.title}
                 key={post.title}
