@@ -6,16 +6,16 @@
 
 ## 📃 Sobre o projeto
 
-Feito em Next.js e CharkaUI, o blog é responsivo e altamente performático. Inicialmente, eu o criei para treinar um pouco construir interfaces com ChakaUI, e logo decidi mantê-lo documentando meus aprendizados na programação, como uso de bibliotecas e resolução de problemas que vou encontrado ao longo dos tempos. 
+Feito em Next.js e ChakraUI, o blog é responsivo e altamente performático. Inicialmente, eu o criei para treinar um pouco construir interfaces com ChakraUI, e logo decidi mantê-lo documentando meus aprendizados na programação, como uso de bibliotecas e resolução de problemas que vou encontrado ao longo dos tempos. 
 
-Na parte de fetch de dados, utilizdo o GraphCMS, pois já sou muito familiarizado com ele. Para renderizar o conteúdo dos posts, que é escrito em markdown, eu utilizdo o react-markdown e o react-syntax-highlighter.
+Na parte de fetch de dados, utilizo o GraphCMS, pois já sou muito familiarizado com ele. Para renderizar o conteúdo dos posts, que é escrito em markdown, eu utilizo o react-markdown e o react-syntax-highlighter.
 
 https://user-images.githubusercontent.com/53953937/186668635-39e80d26-ce90-40d7-9898-b664f249b717.mp4
 
 ### Funcionalidades
 
 - Listagem de posts com GraphCMS.
-- Resposividade completa.
+- Resposividade.
 - Dark mode.
 
 ## 🚀 Tecnologias
@@ -25,17 +25,17 @@ https://user-images.githubusercontent.com/53953937/186668635-39e80d26-ce90-40d7-
 - [GraphCMS](https://hygraph.com/)
 - [ChakraUI](https://chakra-ui.com/)
 
-## 💻 Cloning project
+## 💻 Clonando projeto
 
 ```bash
-$ git clone https://github.com/IzaiasMorais/phanox.git && cd phanox
+$ git clone https://github.com/IzaiasMorais/blog.git && cd blog
 ```
 
 ```bash
-# Install the dependecies
+# Instalando dependências
 $ npm i
 
-# Run the project
+# Rodando projeto
 $ npm run dev
 
 ```
